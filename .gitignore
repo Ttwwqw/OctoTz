@@ -3,7 +3,7 @@
 /[TEMP]/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
+/*[[Bb]uilds]*/
 .gradle*
 /Assets/AssetStoreTools*
 /Assets/StreamingAssets*
