@@ -1,0 +1,20 @@
+;-----FindItem-Luna-ChoicedOlivia-----
+
+; (post-ending dialogue with Olivia)
+
+@char Olivia pos:50,0,0
+
+@print "You’ve got guts, I’ll give you that." author:Olivia waitInput:true
+@wait 0.1
+@print "Most people would’ve handed it to Luna without blinking." author:Olivia waitInput:true
+@wait 0.1
+
+@print "Now the fun begins." author:Olivia waitInput:true
+@wait 0.1
+@print "Just stick close, {G_PlayerName}. Things are about to get interesting." author:Olivia waitInput:true
+@wait 0.1
+
+@hide Olivia
+
+@endroute
+@stop

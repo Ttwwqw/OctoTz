@@ -1,0 +1,20 @@
+;-----FindItem-Luna-ChoicedLuna-----
+
+; (post-ending dialogue with Luna)
+
+@char Luna pos:50,0,0
+
+@print "The house feels... quieter now." author:Luna waitInput:true
+@wait 0.1
+@print "It remembers what you did, even if it doesn’t speak." author:Luna waitInput:true
+@wait 0.1
+
+@print "You made the right choice, {G_PlayerName}." author:Luna waitInput:true
+@wait 0.1
+@print "Even if Olivia never forgives you." author:Luna waitInput:true
+@wait 0.1
+
+@hide Luna
+
+@endroute
+@stop

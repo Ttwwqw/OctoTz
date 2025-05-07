@@ -1,0 +1,52 @@
+;-----FindItem-Olivia-FirstMeet-----
+
+@char Olivia pos:80,0,0
+
+; (lounging on the couch)
+@print "Oh? Look who’s up and about." author:Olivia waitInput:true
+@wait 0.1
+@print "Let me guess... Luna sent you, didn’t she?" author:Olivia waitInput:true
+@wait 0.1
+
+; (smirking)
+@print "She always plays her little games. Secrets, riddles, cryptic warnings." author:Olivia waitInput:true
+@wait 0.1
+@print "Let me save you some time—I’m after the same item. And I don’t plan to lose." author:Olivia waitInput:true
+@wait 0.1
+
+; (leaning forward)
+@print "Tell you what. Play a game with me." author:Olivia waitInput:true
+@wait 0.1
+@print "If you win, I’ll give you a hint. Something useful." author:Olivia waitInput:true
+@wait 0.1
+@print "If not... well, maybe you’ll still enjoy yourself." author:Olivia waitInput:true
+@wait 0.1
+
+; (start minigame here)
+@Mini-game Memorica
+
+@char Olivia pos:50,0,0
+
+; (smiling, relaxed)
+@print "Not bad. I’m impressed." author:Olivia waitInput:true
+@wait 0.1
+@print "A deal’s a deal—I’ll tell you what I know." author:Olivia waitInput:true
+@wait 0.1
+
+; (serious)
+@print "The item you’re looking for? It’s not here." author:Olivia waitInput:true
+@wait 0.1
+@print "It’s should be in the bathroom. Hidden. But not for long." author:Olivia waitInput:true
+@wait 0.1
+
+; (teasing)
+@print "If you find it before I do, bring it to me." author:Olivia waitInput:true
+@wait 0.1
+@print "Luna’s had her time. It’s someone else’s turn now." author:Olivia waitInput:true
+@wait 0.1
+
+@quest FindItem setStage:2
+@print "Objective updated: \[<color=yellow>Search item in bathroom</color>\]" waitInput:true
+
+@endroute
+@stop

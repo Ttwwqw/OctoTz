@@ -1,0 +1,164 @@
+;-----FindItem-FinalChoice-----
+
+; (Luna and Olivia are both here – standing apart, tense)
+
+@char Luna.Luna_stay pos:35,0,0
+@char Olivia.Olivia_stay pos:65,0,0
+
+@print "So... you found it." author:Luna waitInput:true
+@wait 0.1
+@print "I knew you would." author:Luna waitInput:true
+@wait 0.1
+
+@print "Took you long enough." author:Olivia waitInput:true
+@wait 0.1
+@print "I was starting to think you’d lost your nerve." author:Olivia waitInput:true
+@wait 0.1
+
+; (Luna steps forward slightly)
+@print "Give it to me, and I’ll make sure it’s used the right way." author:Luna waitInput:true
+@wait 0.1
+@print "This house, this balance—it depends on it." author:Luna waitInput:true
+@wait 0.1
+
+; (Olivia interrupts, sharp)
+@print "Don’t listen to her. She’ll lock it away again, just like last time." author:Olivia waitInput:true
+@wait 0.1
+@print "Let me take it. I’ll actually *use* it. Set things free." author:Olivia waitInput:true
+@wait 0.1
+
+; (Player looks between them)
+@print "They’re both watching me." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "Expecting. Demanding. Neither of them will be happy if I choose the other..." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "Or if I keep it for myself." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+@choice "Give the item to Luna" goto:.LunaChoice handler:CyberButtonList
+@choice "Give the item to Olivia" goto:.OliviaChoice handler:CyberButtonList
+@choice "Keep the item for yourself" goto:.NooneChoice handler:CyberButtonList
+@stop
+
+
+; -----------------------------------------------------------------------------------------------
+# LunaChoice
+
+@quest FindItem setStage:5 addMark:Luna
+
+@actordialog Luna removeDialogOption:FindItem-FinalChoice
+@actordialog Olivia removeDialogOption:FindItem-FinalChoice
+
+@actorinfo Olivia speeches:"Don't talk with me,Im angry yet,Smart choice.."
+@actordialog Luna addDialogOption:FindItem-Luna-ChoicedLuna repeatable:true
+
+; (Luna takes the item gently)
+@print "Thank you." author:Luna waitInput:true
+@wait 0.1
+@print "You’ve done the right thing." author:Luna waitInput:true
+@wait 0.1
+
+; (Olivia scoffs, stepping back)
+@print "Of course. Playing it safe." author:Olivia waitInput:true
+@wait 0.1
+@print "You’ll regret this. Both of you will." author:Olivia waitInput:true
+@wait 0.1
+
+@hide Olivia
+@char Luna pos:50,0,0
+
+; (Luna closes her eyes, holding the item close)
+@print "It’s time to restore balance. Time to begin again." author:Luna waitInput:true
+@wait 0.1
+
+@hide Luna
+
+@print "Ending unlocked: \[<color=yellow>*Moonlit Silence*</color>\]" waitInput:true
+
+@endroute
+@stop
+
+
+
+; -----------------------------------------------------------------------------------------------
+# OliviaChoice
+
+@quest FindItem setStage:5 addMark:Olivia
+
+@actordialog Luna removeDialogOption:FindItem-FinalChoice
+@actordialog Olivia removeDialogOption:FindItem-FinalChoice
+
+@actorinfo Luna speeches:"Don't talk with me,Im angry yet,Smart choice.."
+@actordialog Olivia addDialogOption:FindItem-Olivia-ChoicedOlivia repeatable:true
+
+; (Olivia snatches it with a smirk)
+@print "Smart choice." author:Olivia waitInput:true
+@wait 0.1
+@print "You won’t regret this." author:Olivia waitInput:true
+@wait 0.1
+
+; (Luna lowers her gaze, visibly disappointed)
+@print "You’ve unleashed something you don’t understand." author:Luna waitInput:true
+@wait 0.1
+@print "I only hope you’ll survive the consequences." author:Luna waitInput:true
+@wait 0.1
+
+@hide Luna
+@char Olivia pos:50,0,0
+
+; (Olivia turns away, already leaving)
+@print "Let the games begin." author:Olivia waitInput:true
+@wait 0.1
+
+@hide Olivia
+
+@print "Ending unlocked: \[<color=yellow>*Storm Unbound*</color>\]" waitInput:true
+
+@endroute
+@stop
+
+
+
+; -----------------------------------------------------------------------------------------------
+# NooneChoice
+
+@quest FindItem setStage:5 addMark:Noone
+
+@actordialog Luna removeDialogOption:FindItem-FinalChoice
+@actordialog Olivia removeDialogOption:FindItem-FinalChoice
+
+@actorinfo Luna speeches:"Don't talk with me,Im angry yet,Smart choice.."
+@actorinfo Olivia speeches:"Don't talk with me,Im angry yet,Smart choice.."
+
+; ({G_PlayerName} holds the item firmly, stepping back)
+@print "No. I’m keeping it." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "It’s mine now." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+; (Luna's expression darkens)
+@print "...So you’ve made your choice." author:Luna waitInput:true
+@wait 0.1
+
+; (Olivia laughs, low and cold)
+@print "Bold. Dangerous. I like it." author:Olivia waitInput:true
+@wait 0.1
+@print "Let’s see how long you last holding onto that thing." author:Olivia waitInput:true
+@wait 0.1
+
+@hide Luna
+@hide Olivia
+
+@print "The room grows colder. The air, heavier." author:<color=grey>Narrator waitInput:true
+@wait 0.1
+@print "You feel every eye in the house turn toward you—even the ones you cannot see." author:<color=grey>Narrator waitInput:true
+@wait 0.1
+
+@print "Ending unlocked: \[<color=yellow>*The Third Path*</color>\]" waitInput:true
+
+@endroute
+@stop
+
+
+
+

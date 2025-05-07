@@ -1,0 +1,35 @@
+
+;-----FindItem-SelfDialog-ItemFinded-----
+
+; (player picks up the item — it's warm, humming faintly)
+
+@print "This must be it..." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "It’s heavier than I thought." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "And... it’s vibrating?" author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+; (glances around — empty room)
+@print "No alarms, no traps... just silence." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "But I can feel it. Something's watching." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+@print "I should head back... before someone else finds me here." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+@location Restroom isOpen:false
+
+@actorinfo Olivia location:Bedroom
+@location Bedroom isOpen:false
+@location_Event_EnterDialog Livingroom dialog:FindItem-SelfDialog-OliviaMissing
+
+@actordialog Luna addDialogOption:FindItem-FinalChoice
+@actordialog Olivia addDialogOption:FindItem-FinalChoice
+
+@quest FindItem setStage:3
+@print "Objective updated: \[<color=yellow>Return to living room</color>\]" waitInput:true
+
+@endroute
+@stop

@@ -1,0 +1,51 @@
+; -----FindItem-StartQuest-----
+
+@char Luna.Luna_stay pos:33,0,-1
+
+; (seat near)
+@print "...You're finally awake." author:Luna waitInput:true
+
+@wait 0.1
+@print "I was starting to think you'd never open your eyes." author:Luna waitInput:true
+@wait 0.1
+
+; (soft smile)
+@print "You must have questions. But first..." author:Luna waitInput:true
+@wait 0.1
+
+@InputField G_PlayerName placeholder:"What should I call you?"
+
+; (standing near the window - back to player)
+@print "That storm last night... It changed something." author:Luna waitInput:true
+@wait 0.1
+@print "I can feel it in the air. Can’t you?" author:Luna waitInput:true
+@wait 0.1
+
+; (turns to face you)
+@print "Something important has appeared. \\nA relic... no, more than that—an anchor." author:Luna waitInput:true
+@wait 0.1
+@print "It’s in the house. Hidden. Waiting." author:Luna waitInput:true
+@wait 0.1
+
+; (serious)
+@print "Olivia is looking for it too. If she gets her hands on it first... \\nWell, let's just say it would be bad for both of us." author:Luna waitInput:true
+@wait 0.1
+
+; (smiling faintly)
+@print "If you find it, bring it to me. I know what must be done." author:Luna waitInput:true
+@wait 0.1
+
+@hide Luna
+
+@quest FindItem setStage:1
+
+@location Bedroom isOpen:true
+@location Restroom isOpen:true
+@location Livingroom isOpen:true
+
+@actordialog Olivia addDialogOption:FindItem-Olivia-FirstMeet
+
+@print "Quest started: \[<color=yellow>Find the item and bring it to Luna</color>\]" waitInput:true
+
+@endroute
+@stop

@@ -1,0 +1,59 @@
+@InputField 
+	nameless (string) - customValueName
+	placeholder:(string) - строка для плейсхолдера инпута
+
+@Quest
+	nameless (string)- questName (id)
+optional:
+	setStage:(int) - установить текущий прогресс
+	setStageByName:(string) - установить текущий прогресс
+ 	addMark:(string,string) - добавить маркеры к квесту 
+	removeMark:(string,string) - убрать маркеры с квесту
+
+@Location
+	nameless (string)- locationName(id)
+optional:
+	isOpen:(bool) - установить доступность
+ 	addMark:(string,string) - добавить маркеры к локации
+	removeMark:(string,string) - убрать маркеры с локации
+
+@Location_Event_EnterDialog - заготовка под события
+	nameless (string)- locationName(id)
+	dialog:(string) -  Id / имя скрипта naninovel
+
+@ActorInfo
+	nameless (string)- actorName(id)
+optional:
+	location:(string) - установить текущую локацию актера
+	speeches:(string,string) - заменить текущий набор реплик
+ 	addMark:(string,string) - добавить маркеры к актеру
+	removeMark:(string,string) - убрать маркеры с актера
+
+@ActorDialog
+	nameless (string)- actorName(id)
+optional:
+	removeDialogOption:(string) - убрать опцию диалога (Id / имя скрипта naninovel)
+	addDialogOption:(string) - добавить опцию диалога
+	[стандартные значения - (“”,false)]
+	startLabel:(string) - с какой метки начать этот диалог
+	repeatable:(bool) - єто повторяемый диалог?
+
+@Mini-game 
+	nameless (string) - название фрейма мини игры
+
+@Endroute - пинг составных диалогов
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

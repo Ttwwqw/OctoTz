@@ -1,0 +1,23 @@
+;-----FindItem-SelfDialog-OliviaMissing-----
+
+; (empty room, Olivia is gone)
+
+@print "She’s gone..." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "I was sure she’d still be here." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+; (glancing around)
+@print "Did she find another clue? Or maybe..." author:{G_PlayerName} waitInput:true
+@wait 0.1
+@print "Maybe she went to talk to Luna. \nIf they’re both in the bedroom now... this might get complicated." author:{G_PlayerName} waitInput:true
+@wait 0.1
+
+@quest FindItem setStage:4
+@location Restroom isOpen:false
+@location Bedroom isOpen:true
+
+@print "Objective updated: [<color=yellow>Return to the bedroom</color>]" waitInput:true
+
+@endroute
+@stop
